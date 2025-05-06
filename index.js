@@ -3,7 +3,7 @@ function createLoginTracker(userInfo) {
   let attemptCount = 0;
   // Function to check the password
   const loginAttempt = (passwordAttempt) => {
-   // If 3 or more failed attempts - account is locked
+   // If account is locked
    if (attemptCount >= 3) {
     return "Account is locked due to too many failed login attempts";
    }
@@ -11,7 +11,7 @@ function createLoginTracker(userInfo) {
    if (passwordAttempt === userInfo.password) {
     return "Login successful"
    }
-   // If password is wrong - add one attempt
+   // If password is wrong 
    attemptCount++;
    // If now 3 or more attempts - lock the account
    if (attemptCount >= 3) {
